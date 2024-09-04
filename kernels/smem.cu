@@ -25,4 +25,8 @@ void __global__ gemm_smem(int M, int N, int K, const float *A, const float *B, f
   A += blockIdx.x * BLOCKSIZE * K;
   B += blockIdx.y * BLOCKSIZE;
   C += blockIdx.x * BLOCKSIZE * N + blockIdx.y * BLOCKSIZE;
+
+  for (int blkId = 0; blkId < K; blk += BLOCKSIZE) {
+
+  }
 }
